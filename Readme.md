@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Anastasiia Erokhina](https://up.htmlacademy.ru/htmlcss/28/user/1424545).
-* Наставник: `Неизвестно`.
+* Наставник: [Anna Lisenenkova](https://htmlacademy.ru/profile/ankhena).
 
 ---
 
