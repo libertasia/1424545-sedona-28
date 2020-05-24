@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Каталог отелей Седона</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nouislider.css">
   </head>
   <body>
-
+    <script src="js/nouislider.js"></script>
   <header>
     <!--Navigation bar-->
     <nav>
@@ -25,7 +26,50 @@
   <main>
     <section>
       <h1 class="visually-hidden">Фильтр отелей</h1>
-      <!-- Тут будет форма фильтра поиска отелей -->
+      <!--Hotel search filter form-->
+      <form action="https://echo.htmlacademy.ru/" method="get">
+        <fieldset>
+          <legend>Инфраструктура:</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="pool" id="filter-pool" checked>
+              <label for="filter-pool">Бассейн</label>
+            </li>
+            <li>
+              <input type="checkbox" name="parking" id="filter-parking">
+              <label for="filter-parking">Парковка</label>
+            </li>
+            <li>
+              <input type="checkbox" name="wifi" id="filter-wifi">
+              <label for="filter-wifi">WI-FI</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>Тип жилья:</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="hotel" id="filter-hotel" checked>
+              <label for="filter-hotel">Гостиница</label>
+            </li>
+            <li>
+              <input type="checkbox" name="motel" id="filter-motel" checked>
+              <label for="filter-motel">Мотель</label>
+            </li>
+            <li>
+              <input type="checkbox" name="apartments" id="filter-apartments" checked>
+              <label for="filter-apartments">Апартаменты</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <label>Стоимость в сутки (Р):</label>
+          <input type="text" value="от 0">
+          <input type="text" value="до 3000">  
+        </fieldset>
+        <div id="slider"></div>
+        <button type="submit">Показать</button>
+      </form>
     </section>
 
     <section>
@@ -107,5 +151,18 @@
       </a>
     </p> 
   </footer>
+  <!--
+  <script>
+    var slider = document.getElementById('slider');
+
+    noUiSlider.create(slider, {
+        start: [0, 3000],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 3000
+        }
+    });
+  </script>-->
   </body>
 </html>
