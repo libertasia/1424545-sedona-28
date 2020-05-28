@@ -13,16 +13,16 @@
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/ptsans.woff2") format("woff2"),
-  url("/fonts/ptsans.woff") format("woff");
+  src: url("../fonts/ptsans.woff2") format("woff2"),
+  url("../fonts/ptsans.woff") format("woff");
 }
 
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: bold;
-  src: url("/fonts/ptsansbold.woff2") format("woff2"),
-  url("/fonts/ptsansbold.woff") format("woff");
+  src: url("../fonts/ptsansbold.woff2") format("woff2"),
+  url("../fonts/ptsansbold.woff") format("woff");
 }
 
 :root {
@@ -114,8 +114,8 @@ img {
   height: 509px;
   text-align: center;
   background-image: 
-    url(/img/zigzag.svg),
-    url(/img/background_photo_index.jpg);
+    url("../img/zigzag.svg"),
+    url("../img/background_photo_index.jpg");
   background-repeat: no-repeat;
   background-position: center bottom -2px, center top;
 }
@@ -329,7 +329,7 @@ img {
 }
 
 .stars {
-  background-image: url(/img/star.svg);
+  background-image: url("../img/star.svg");
   background-repeat: space;
   width: 19px;
   height: 17px;
