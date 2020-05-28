@@ -1,7 +1,356 @@
 .visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-  }
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/ptsans.woff2") format("woff2"),
+  url("/fonts/ptsans.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/ptsansbold.woff2") format("woff2"),
+  url("/fonts/ptsansbold.woff") format("woff");
+}
+
+:root {
+  --basic-black: #000000;
+  --basic-white: #FFFFFF;
+  --basic-dark: #333333;
+  --basic-grey: #888888;
+  --basic-brown: #766357;
+  --broun-hover:#604E43;
+  --brown-active:#503E33;
+  --basic-blue: #81B3D2;
+  --dark-blue: #669EC0;
+  --extra-dark-blue: #5496BD;
+  --light-grey: #EEEEEE;
+  --light-brown: #A9A9A9;
+  --extra-white: rgba(255, 255, 255, 0.9);
+  --white-for-button: rgba(255, 255, 255, 0.3);
+  --extra-grey: #CACACA;
+  --rating-color: #666666;
+  --rating-background: #F2F2F2;
+  --logo-normal-background: #231F20;
+  --logo-pressed-background: #BDBBBC;
+  --black-with-opacity: rgba(0, 0, 0, 0.3)
+}
+
+body {
+  min-width: 1220px;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: bold;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  background-color: var(--basic-white);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+  
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main navigation */
+
+.main-navigation {
+  font-size: 14px; /*Может это не нужно, отнаследуется от body?*/
+  line-height: 26px; /*Может это не нужно, отнаследуется от body?*/
+  color: var(--basic-black);
+  background-position: center;
+}
+
+.site-navigation {
+  list-style: none;
+}
+
+.site-navigation a:not([href]) {
+  color: var(--basic-brown);
+}
+
+/* User navigation */
+
+.site-navigation a {
+  color: var(--basic-black);
+}
+
+.site-navigation li:hover a,
+.site-navigation li:hover a:visited,
+.site-navigation li:focus a,
+.site-navigation li:focus a:visited {
+  color: var(--basic-blue);
+}
+
+.site-navigation li:active a,
+.site-navigation li:active a:visited,
+.site-navigation li a:visited {
+  color: var(--black-with-opacity);
+}
+
+/*Index page-Main*/
+
+.background-photo {
+  height: 509px;
+  text-align: center;
+  background-image: 
+    url(/img/zigzag.svg),
+    url(/img/background_photo_index.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom -2px, center top;
+}
+
+.features {
+  text-align: center;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: normal;
+  color: var(--basic-dark);
+}
+
+.interested-title {
+  text-align: center;
+  padding-top: 17px;
+  font-size: 30px;
+  line-height: 24px;
+}
+
+.interested-text {
+  text-align: center;
+  margin-top: 26px;
+  line-height: 24px;
+  color: var(--basic-dark);
+  font-weight: normal;
+}
+
+/*Button navigation*/
+
+.search-button {
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--basic-white);
+  background-color: var(--basic-brown);
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: var(--broun-hover);
+}
+
+.search-button:active {
+  color: var(--white-for-button);
+  background-color: var(--brown-active);
+}
+
+/* Footer */
+
+.main-footer {
+  color: var(--basic-black);
+  background-color: var(--extra-white);
+}
+
+.footer-contacts a {
+  font-size: 21px;
+  line-height: 26px;
+  color: var(--basic-black);
+  text-decoration: none;
+}
+
+.footer-contacts a:hover,
+.footer-contacts a:focus {
+  color: var(--basic-blue);
+  text-decoration: none;
+}
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social ul {
+  list-style: none;
+}
+
+.footer-social li {
+  margin-left: 5px;
+  margin-bottom: 8px;
+  width: 46px;
+  height: 48px;
+  background-color: var(--basic-blue);
+}
+
+.footer-social li:hover,
+.footer-social li:hover svg,
+.footer-social li:focus,
+.footer-social li:focus svg {
+  background-color: var(--dark-blue);
+}
+
+.footer-social li:active,
+.footer-social li:active svg,
+.footer-social li:active svg path {
+  background-color: var(--extra-dark-blue);
+  fill: var(--white-for-button);
+}
+
+.social-button a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-copyright {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.logo-academy path {
+  fill:var(--logo-normal-background);
+}
+
+.logo-academy:hover path,
+.logo-academy:focus path{
+  fill: var(--basic-blue);
+}
+
+.logo-academy:active path{
+  fill: var(--logo-pressed-background);
+}
+
+/*Hotel page-Main*/
+
+.results-list {
+  list-style: none;
+}
+
+.results-list h3 {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  align-items: center;
+}
+
+.results-list span {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  align-items: center;
+}
+
+.more-button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: var(--basic-white);
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: var(--basic-blue);
+    border: none;
+}
+
+.book-button {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: var(--basic-white);
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: var(--basic-brown);
+    border: none;
+}
+
+.more-button:hover,
+.more-button:focus {
+  background-color: var(--dark-blue);
+}
+
+.book-button:hover,
+.book-button:focus {
+  background-color: var(--broun-hover);
+}
+
+.more-button:active{
+  background-color: var(--extra-dark-blue);
+  color: var(--white-for-button);
+}
+
+.book-button:active{
+  background-color: var(--brown-active);
+  color: var(--white-for-button);
+}
+
+.rating {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: var(--rating-color);
+  background-color: var(--rating-background);
+}
+
+.stars {
+  background-image: url(/img/star.svg);
+  background-repeat: space;
+  width: 19px;
+  height: 17px;
+}
+
+.stars-1 {
+  width: 19px;
+}
+
+.stars-2 {
+  width: 43px;
+}
+
+.stars-3 {
+  width: 67px;
+}
+/*Не могу понять, почему 4 звезды вставляет 5 звезд, а 5-вставляет 6 звезд?Или это еще не нужно делать? Я считала так: 19*4+5*3=91(ширина звезд и 5-расстояние между звездами)*/
+.stars-4 {
+  width: 91px;
+}
+
+.stars-5 {
+  width: 115px;
+}
