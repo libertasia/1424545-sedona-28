@@ -55,11 +55,12 @@
 
   --black-with-opacity: rgba(0, 0, 0, 0.3);
   --form-shadow-color: rgba(0, 1, 1, 0.15);
+  --pages-shadow: rgba(0, 1, 1, 0.2);
   --border-color: #E5E5E5;
 }
 
 body {
-  min-width: 1220px;
+  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
@@ -68,7 +69,7 @@ body {
   font-weight: bold;
   color: var(--basic-black);
   text-transform: uppercase;
-  background-color: var(--basic-white);
+  background-color: var(--basic-grey);
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -86,17 +87,74 @@ img {
   outline: none;
 }
 
+.main-wrapper {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--basic-white); 
+  box-shadow: 0px 5px 15px var(--pages-shadow);
+}
+
+/* Grid */
+
+html {
+  height: 100%;
+}
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+.container {
+  width: 1054px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Main navigation */
 
 .main-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 56px;
+  max-width: 1054px;
+
+
   font-size: 14px; /*Может это не нужно, отнаследуется от body?*/
   line-height: 26px; /*Может это не нужно, отнаследуется от body?*/
   color: var(--basic-black);
   background-position: center;
 }
 
+.main-header-logo {
+  width: 138px;
+  height: 70px;
+}
+
 .site-navigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 0;
+  margin: 0;
+
   list-style: none;
+}
+
+.site-navigation li:nth-child(4n-3),
+.site-navigation li:nth-child(4n-2) {
+  padding-left: 73px;
+  text-align: left;
+}
+
+.site-navigation li:nth-child(4n-1),
+.site-navigation li:nth-child(4n) {
+  padding-right: 73px;
+  text-align: right;
 }
 
 .site-navigation a:not([href]) {
@@ -156,7 +214,8 @@ img {
 
 .interested-title {
   text-align: center;
-  padding-top: 17px;
+  padding-top: 58px;
+  margin: 0;
   font-size: 30px;
   line-height: 24px;
 }
@@ -330,8 +389,20 @@ img {
 /* Footer */
 
 .main-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 73px;
+  padding-right: 73px;
+  min-width: 120px;
+
   color: var(--basic-black);
   background-color: var(--footer-color);
+}
+
+.footer-contacts {
+  margin: 0;
+  width: 327px;
+  text-align: center;
 }
 
 .footer-contacts a {
@@ -348,16 +419,22 @@ img {
 }
 
 .footer-social {
+  width: 400px;
+  justify-self: center;
+
   text-align: center;
 }
 
 .footer-social ul {
+  width: 150px;
+  margin: 0 auto;
+  padding: 0;
+
   list-style: none;
 }
 
 .footer-social li {
-  margin-left: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   width: 46px;
   height: 48px;
   background-color: var(--bright);
@@ -384,12 +461,13 @@ img {
 }
 
 .footer-copyright {
+  width: 327px;
+  margin: 0;
+
   font-weight: normal;
   font-size: 14px;
   line-height: 26px;
   text-align: center;
-  margin-top: 10px;
-  margin-right: 8px;
 }
 
 .logo-academy path {
@@ -493,12 +571,12 @@ img {
 
 .sorting-item:nth-child(2) a {
   color: var(--black-with-opacity);
-  border-bottom: 1px dotted var(--bright);
+  border-bottom: 1px dashed var(--bright);
 }
 
 .sorting-item:last-child a {
   color: var(--black-with-opacity);
-  border-bottom: 1px dotted var(--bright);
+  border-bottom: 1px dashed var(--bright);
 }
 
 .sorting-item a:hover,
@@ -529,7 +607,7 @@ img {
   fill: var(--basic-black);
 }
 
-.arrow-up:active path, /*НЕ РАБОТАЕТ!!!!???*/
+.arrow-up:active path,
 .arrow-down:active path {
   fill: var(--bright);
 }
@@ -538,20 +616,47 @@ img {
 
 .results-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+.results-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  padding-left: 73px;
+  padding-right: 73px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hotel-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 29px;
+  height: 87px;
+}
+
 
 .results-list h3 {
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
-  align-items: center;
 }
+
 
 .results-list span {
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
-  align-items: center;
 }
 
 .more-button {
@@ -598,6 +703,13 @@ img {
 .book-button:active{
   background-color: var(--button-brown-active);
   color: var(--white-active);
+}
+
+.hotel-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .rating {
