@@ -28,7 +28,7 @@
           <h1 class="visually-hidden">Фильтр отелей</h1>
           <!--Hotel filter form-->
           <form class="hotel-filter-form" action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset>
+            <fieldset class="infrastructure-item">
               <legend>Инфраструктура:</legend>
               <ul class="infrastructure">
                 <li>
@@ -45,7 +45,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="housing-type-item">
               <legend>Тип жилья:</legend>
               <ul class="housing-type">
                 <li>
@@ -62,13 +62,15 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="rate">
-              <label>Стоимость в сутки (Р):</label>
-              <label class="min-price">от <input type="text" name="min-price" value="0"></label>
-              <label class="max-price">до <input type="text" name="max-price" value="3000"></label>  
-            </fieldset>
-            <div id="slider"></div>
-            <button class="show-button" type="submit">Показать</button>
+            <div class="rate">
+              <p class="rate-price">Стоимость в сутки (Р):</p>
+              <p class="price">
+                <label class="min-price">от <input type="text" name="min-price" placeholder="0"></label>
+                <label class="max-price">до <input type="text" name="max-price" placeholder="3000"></label>
+              </p>
+              <button class="show-button" type="submit">Показать</button>
+            </div>
+            <!--<div class="slider"></div>-->
           </form>
         </section>
   
