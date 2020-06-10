@@ -167,6 +167,7 @@ html {
 /* User navigation */
 
 .site-navigation a {
+  display: block;
   color: var(--basic-black);
 }
 
@@ -220,6 +221,8 @@ html {
   align-items: center;
   margin-top: 43px;
   margin-bottom: 42px;
+  margin-left: 365px;
+  margin-right: 365px;
 }
 
 .features-main p {
@@ -234,7 +237,10 @@ html {
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: 51px;
+  margin-top: 0;
+  margin-bottom: 53px;
+  margin-left: 340px;
+  margin-right: 341px;
 }
 
 .features-show h2 {
@@ -263,6 +269,17 @@ html {
   width: 400px;
   min-height: 256px;
   margin: 0;
+  position: relative;
+}
+
+.first-feature::after {
+  content: "";
+  position: absolute;
+  background-image: url(/img/image_1_index.jpg);
+  width: 800px;
+  height: 256px;
+  background-repeat: no-repeat;
+  left: 400px;
 }
 
 .features-list-light {
@@ -337,11 +354,15 @@ html {
   width: 269px;
 }
 
-.feature-item-list h3 {
+.house,
+.food,
+.souvenirs {
+  position: relative;
   margin: 0;
   margin-bottom: 25px;
   font-size: 21px;
   line-height: 21px;
+  font-weight: bold;
   color: var(--basic-black);
 }
 
@@ -353,6 +374,39 @@ html {
   color: var(--basic-dark);
 }
 
+.house::after {
+  content: "";
+  position: absolute;
+  background-image: url(/img/icon_house.svg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 72px;
+  top: -100px;
+  right: 90px;
+}
+
+.food::after {
+  content: "";
+  position: absolute;
+  background-image: url(/img/icon_food.svg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 70px;
+  top: -99px;
+  right: 112px;
+}
+
+.souvenirs::after {
+  content: "";
+  position: absolute;
+  background-image: url(/img/icon_souvenirs.svg);
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 77px;
+  top: -104px;
+  right: 103px;
+}
+
 .second-feature{
   display: flex;
   flex-direction: column;
@@ -362,6 +416,17 @@ html {
   min-height: 256px;
   margin: 0;
   margin-left: auto;
+  position: relative;
+}
+
+.second-feature::before {
+  content: "";
+  position: absolute;
+  background-image: url(/img/image_2_index.jpg);
+  width: 800px;
+  height: 256px;
+  background-repeat: no-repeat;
+  right: 400px;
 }
 
 .second-feature .feature-title {
@@ -429,6 +494,9 @@ html {
   flex-wrap: wrap;
   min-height: 233px;
   margin-top: 58px;
+  margin-bottom: 0;
+  margin-left: 316px;
+  margin-right: 316px;
   align-items: center;
 }
 
@@ -441,7 +509,8 @@ html {
 
 .interested-text {
   text-align: center;
-  margin-top: 32px;
+  padding: 0;
+  padding-top: 18px;
   line-height: 24px;
   color: var(--basic-dark);
   font-weight: normal;
@@ -451,13 +520,14 @@ html {
 
 .search-button {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: auto;
   width: 568px;
-  height: 86px;
-  padding: 0;
+  min-height: 86px;
+  padding: 30px 124px 30px 125px;
 
   font-family: PT Sans;
   font-style: normal;
@@ -504,6 +574,15 @@ html {
  
   background: var(--basic-white);
   box-shadow: 0px 7px 15px var(--form-shadow-color);
+}
+
+.search-fields input{
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: var(--basic-black);
 }
 
 .search-item .check-in {
@@ -604,6 +683,14 @@ html {
   height: 38px;
   padding: 0;
 }
+/*
+.button-calendar {
+  position: absolute;
+  width: 21px;
+  height: 23px;
+  padding: 0;
+  right: -20px;
+}*/
 
 .button-minus,
 .button-plus,
@@ -663,6 +750,7 @@ html {
 
 .map {
   margin-bottom: -120px;
+  height: 594px;
 }
 
 /* Footer */
@@ -671,8 +759,6 @@ html {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-left: 73px;
-  padding-right: 73px;
   min-height: 120px;
 
   color: var(--basic-black);
@@ -680,9 +766,19 @@ html {
 }
 
 .footer-contacts {
+  display: grid;
   margin: 0;
-  width: 327px;
+  margin-top: 23px;
+  margin-left: 75px;
+  margin-bottom: 36px;
+  gap: 9px;
   text-align: center;
+}
+
+.footer-contacts p {
+  margin: 0;
+  font-size: 21px;
+  line-height: 26px;
 }
 
 .footer-contacts a {
@@ -699,34 +795,44 @@ html {
 }
 
 .footer-social {
-  width: 400px;
+  width: 156px;
   justify-self: center;
+  align-items: center;
   text-align: center;
+  margin-top: 36px;
+  margin-bottom: 30px;
 }
 
 .footer-social ul {
   display: flex;
-  justify-content: space-between;
-  width: 150px;
-  margin: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  min-width: 150px;
+  margin: 0 auto;
   padding: 0;
 
   list-style: none;
 }
 
 .footer-social li {
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  
+  text-decoration: none;
   width: 46px;
   height: 48px;
   background-color: var(--bright);
 }
 
-.social-button {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+.footer-social li:last-child {
+  margin-right: 0px;
 }
 
 .social-button:focus {
@@ -744,15 +850,26 @@ html {
 
 .footer-copyright {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 327px;
   margin: 0;
+  margin-top: 38px;
+  margin-bottom: 41px;
 
   font-weight: normal;
   font-size: 14px;
   line-height: 26px;
   text-align: center;
+}
+
+.logo-academy {
+  display: block;
+  margin: 0;
+  width: 115px;
+  height: 41px;
+  margin-left: 8px;
 }
 
 .logo-academy path {
@@ -908,8 +1025,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   width: 1054px;
-  min-height: 85px;
-  align-items: center;
+  min-height: 86px;
+  align-items: flex-start;
   padding-left: 73px;
   padding-right: 73px;
   margin: 0;
@@ -921,27 +1038,44 @@ html {
 .search-results h2 {
   display: flex;
   flex-wrap: wrap;
+  width: 135px;
   justify-content: flex-start;
   margin: 0;
   padding: 0;
-  padding-right: 46px;
+  padding-top: 29px;
+  padding-bottom: 31px;
+  padding-right: 28px;
 
   font-size: 21px;
+  line-height: 26px;
 }
 
 .search-results p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   margin: 0;
+  padding: 0;
+  padding-top: 31px;
+  padding-bottom: 37px;
 }
 
 .sorting {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 690px;
 
   list-style: none;
   margin: 0;
+  padding-top: 32px;
+  padding-bottom: 36px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .sorting-item:first-child {
@@ -952,16 +1086,7 @@ html {
   padding-right: 33px;
 }
 
-.arrow-up-down {
-  display: flex;
-  margin-left: auto;
-}
-
-.arrow-up {
-  padding-right: 12px;
-}
-
-.search-results a {
+.sorting-item a {
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
@@ -990,6 +1115,20 @@ html {
 .sorting-item a:active {
   color: var(--basic-black);
   border-bottom: none;
+}
+
+.arrow-up-down {
+  display: flex;
+  padding: 0;
+  margin-left: auto;
+  margin-top: 40px;
+}
+.arrow-up-down a {
+  line-height: 10px;
+}
+
+.arrow-up {
+  padding-right: 12px;
 }
 
 .arrow-up path {
@@ -1026,10 +1165,11 @@ html {
 .results-list li {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  min-height: 150px;
+  align-items: stretch;
+  min-height: 120px;
   padding-left: 73px;
   padding-right: 73px;
+  padding-bottom: 30px;
 
   border-bottom: 1px solid var(--border-color);
 }
@@ -1038,18 +1178,25 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: flex-start;
+  margin-top: 30px;
 }
 
 .hotel-item {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 29px;
   min-height: 90px;
+  margin-top: 24px;
 }
 
 
 .hotel-item h3 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 258px;
   margin-bottom: 7px;
   margin-top: 0;
 
@@ -1067,6 +1214,8 @@ html {
   display: grid;
   column-gap: 6px;
   row-gap: 16px;
+  grid-template-columns: 110px 142px;
+  justify-items: stretch;
 }
 
 .hotel-item-price {
@@ -1076,11 +1225,14 @@ html {
 
 .more-button {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 110px;
-  height: 27px;
+  min-width: 77px;
+  min-height: 21px;
+  padding: 3px 16px 3px 17px;
 
+  text-align: center;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -1093,11 +1245,14 @@ html {
 
 .book-button {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 142px;
-  height: 27px;
+  min-width: 109px;
+  height: 21px;
+  padding: 3px 17px 3px 16px;
 
+  text-align: center;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -1130,20 +1285,22 @@ html {
 
 .hotel-rating {
   display: flex;
+  flex-wrap: wrap;
   margin-left: auto;
+  margin-top: 29px;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
   min-height: 90px;
 }
 
 .rating {
   width: 110px;
   height: 27px;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 0;
 
   font-style: normal;
   font-weight: normal;
@@ -1166,17 +1323,17 @@ html {
 }
 
 .stars-2 {
-  width: 43px;
+  width: 42px;
 }
 
 .stars-3 {
-  width: 67px;
+  width: 65px;
 }
-/*Не могу понять, почему 4 звезды вставляет 5 звезд, а 5-вставляет 6 звезд?Или это еще не нужно делать? Я считала так: 19*4+5*3=91(ширина звезд и 5-расстояние между звездами)*/
+
 .stars-4 {
-  width: 91px;
+  width: 88px;
 }
 
 .stars-5 {
-  width: 115px;
+  width: 111px;
 }
