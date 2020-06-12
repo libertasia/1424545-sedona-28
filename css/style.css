@@ -275,7 +275,7 @@ html {
 .first-feature::after {
   content: "";
   position: absolute;
-  background-image: url(/img/image_1_index.jpg);
+  background-image: url("../img/image_1_index.jpg");
   width: 800px;
   height: 256px;
   background-repeat: no-repeat;
@@ -377,7 +377,7 @@ html {
 .house::after {
   content: "";
   position: absolute;
-  background-image: url(/img/icon_house.svg);
+  background-image: url("../img/icon_house.svg");
   background-repeat: no-repeat;
   width: 75px;
   height: 72px;
@@ -388,7 +388,7 @@ html {
 .food::after {
   content: "";
   position: absolute;
-  background-image: url(/img/icon_food.svg);
+  background-image: url("../img/icon_food.svg");
   background-repeat: no-repeat;
   width: 75px;
   height: 70px;
@@ -399,7 +399,7 @@ html {
 .souvenirs::after {
   content: "";
   position: absolute;
-  background-image: url(/img/icon_souvenirs.svg);
+  background-image: url("../img/icon_souvenirs.svg");
   background-repeat: no-repeat;
   width: 64px;
   height: 77px;
@@ -422,7 +422,7 @@ html {
 .second-feature::before {
   content: "";
   position: absolute;
-  background-image: url(/img/image_2_index.jpg);
+  background-image: url("../img/image_2_index.jpg");
   width: 800px;
   height: 256px;
   background-repeat: no-repeat;
