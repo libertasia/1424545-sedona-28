@@ -32,15 +32,15 @@
               <legend>Инфраструктура:</legend>
               <ul class="infrastructure">
                 <li>
-                  <input type="checkbox" name="pool" id="filter-pool" checked>
+                  <input class="filter-checkbox" type="checkbox" name="pool" id="filter-pool" checked>
                   <label for="filter-pool">Бассейн</label>
                 </li>
                 <li>
-                  <input type="checkbox" name="parking" id="filter-parking">
+                  <input class="filter-checkbox" type="checkbox" name="parking" id="filter-parking">
                   <label for="filter-parking">Парковка</label>
                 </li>
                 <li>
-                  <input type="checkbox" name="wifi" id="filter-wifi">
+                  <input class="filter-checkbox" type="checkbox" name="wifi" id="filter-wifi">
                   <label for="filter-wifi">WI-FI</label>
                 </li>
               </ul>
@@ -49,28 +49,37 @@
               <legend>Тип жилья:</legend>
               <ul class="housing-type">
                 <li>
-                  <input type="checkbox" name="hotel" id="filter-hotel" checked>
+                  <input class="filter-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
                   <label for="filter-hotel">Гостиница</label>
                 </li>
                 <li>
-                  <input type="checkbox" name="motel" id="filter-motel" checked>
+                  <input class="filter-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
                   <label for="filter-motel">Мотель</label>
                 </li>
                 <li>
-                  <input type="checkbox" name="apartments" id="filter-apartments" checked>
+                  <input class="filter-checkbox" type="checkbox" name="apartments" id="filter-apartments" checked>
                   <label for="filter-apartments">Апартаменты</label>
                 </li>
               </ul>
             </fieldset>
             <div class="rate">
               <p class="rate-price">Стоимость в сутки (Р):</p>
-              <p class="price">
-                <label class="min-price">от <input type="text" name="min-price" placeholder="0"></label>
-                <label class="max-price">до <input type="text" name="max-price" placeholder="3000"></label>
-              </p>
+              <div class="price">
+                <label class="visually-hidden" for="min-price">Минимальная цена за сутки</label>
+                <input class="price-input" type="text" name="min-price" id="min-price" placeholder="ОТ 0">
+                <label class="visually-hidden" for="max-price">Максимальная цена за сутки</label>
+                <input class="price-input" type="text" name="max-price" id="max-price" placeholder="ДО 3000">
+              </div>
+              <div class="rate-price-slider">
+                <div class="rate-price-range-control">
+                    <div class="rate-price-range-control-scale">
+                        <div class="rate-price-range-control-bar"></div>
+                    </div>
+                    <div class="rate-price-range-control-toggle toggle-min" tabindex="0" style="left: 0%"></div>
+                    <div class="rate-price-range-control-toggle toggle-max" tabindex="0" style="left: 80%"></div>
+                </div>
               <button class="show-button" type="submit">Показать</button>
             </div>
-            <!--<div class="slider"></div>-->
           </form>
         </section>
   
