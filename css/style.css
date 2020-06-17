@@ -116,8 +116,8 @@ html {
 .main-navigation {
   position: relative;
 
-  font-size: 14px; /*Может это не нужно, отнаследуется от body?*/
-  line-height: 26px; /*Может это не нужно, отнаследуется от body?*/
+  font-size: 14px; 
+  line-height: 26px; 
   color: var(--basic-black);
   background-position: center;
 }
@@ -131,33 +131,48 @@ html {
   height: 70px;
 }
 
+.main-header-logo:focus {
+  outline: 2px solid var(--bright);
+}
+
 .site-navigation {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: auto;
-  min-height: 56px;
+  min-height: 26px;
   padding-left: 72px;
   padding-right: 72px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin: 0;
   list-style: none;
 }
 
 .site-navigation li {
-  flex-basis: 100%; 
+  flex-basis: 20%; 
 }
 
-.site-navigation li:first-child,
-.site-navigation li:nth-child(2) {
+.site-navigation li:nth-child(4n-3) {
+  margin-right: 17px;
+}
+
+.site-navigation li:nth-child(4n-3),
+.site-navigation li:nth-child(4n-2) {
   text-align: left;
 }
 
-.site-navigation li:nth-child(3) {
-  margin-left: 138px;
+.site-navigation li:nth-child(4n-2) {
+  margin-right: 178px;
 }
 
-.site-navigation li:nth-child(3) ,
-.site-navigation li:last-child {
+.site-navigation li:nth-child(4n-1),
+.site-navigation li:nth-child(4n) {
   text-align: right;
+}
+
+.site-navigation li:nth-child(4n) {
+  margin-left: auto;
 }
 
 .site-navigation a:not([href]) {
@@ -253,9 +268,9 @@ html {
 
 .features-list-first {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-
+  flex-direction: column;
+  
   list-style: none;
   padding: 0;
   margin: 0;
@@ -263,13 +278,15 @@ html {
 
 .first-feature {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  width: 400px;
-  min-height: 256px;
+  max-width: 297px;
+  min-height: 155px;
   margin: 0;
   position: relative;
+
+  padding: 47px 51px 54px 52px;
 }
 
 .first-feature::after {
@@ -281,6 +298,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   left: 400px;
+  top: 0px;
 }
 
 .features-list-light {
@@ -296,16 +314,13 @@ html {
 }
 
 .first-feature .feature-title {
-  padding-top: 47px;
   display: flex;
   flex-wrap: wrap;
-  width: 122px;
 }
 
 .first-feature .feature-description {
   display: flex;
   flex-wrap: wrap;
-  width: 297px;
 }
 
 .feature-number {
@@ -327,8 +342,9 @@ html {
 .feature-item-list {
   display: flex;
   flex-wrap: wrap;
-  min-height: 330px;
+  min-height: 248px;
   padding: 0;
+  padding-bottom: 82px;
  
   list-style: none;
   background-color: var(--basic-white);
@@ -410,14 +426,16 @@ html {
 
 .second-feature{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  width: 400px;
-  min-height: 256px;
+  max-width: 301px;
+  min-height: 155px;
   margin: 0;
   margin-left: auto;
   position: relative;
+
+  padding: 50px 49px 51px 50px;
 }
 
 .second-feature::before {
@@ -429,19 +447,17 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   right: 400px;
+  bottom: 0px;
 }
 
 .second-feature .feature-title {
-  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  width: 150px;
 }
 
 .second-feature .feature-description {
   display: flex;
   flex-wrap: wrap;
-  width: 301px;
 }
 
 .features-list-second {
@@ -460,16 +476,17 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 258px;
   padding-top: 47px;
   padding-bottom: 54px;
+  padding-left: 71px;
+  padding-right: 71px;
 }
 
 .features-list-dark .feature-title {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 119px;
 
   font-size: 21px;
   line-height: 21px;
@@ -479,7 +496,6 @@ html {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 258px;
 }
 
 .features-list-dark .feature-description,
@@ -543,14 +559,21 @@ html {
   cursor: pointer;
 }
 
-.search-button:hover,
 .search-button:focus {
   background-color: var(--button-brown-hover);
+  outline: 2px solid var(--basic-black);
+}
+
+.search-button:hover {
+  background-color: var(--button-brown-hover);
+  outline: none;
 }
 
 .search-button:active {
   color: var(--white-active);
   background-color: var(--button-brown-active);
+  border: none;
+  outline: none;
 }
 
 /*Hotel search form*/
@@ -632,10 +655,16 @@ html {
 .check-in input::-moz-placeholder,
 .check-out input::-moz-placeholder {
   color: var(--basic-black);
+  opacity: 1;
 }
 
 .check-in input::-webkit-input-placeholder,
 .check-out input::-webkit-input-placeholder {
+  color: var(--basic-black);
+}
+
+.check-in input::placeholder,
+.check-out input::placeholder {
   color: var(--basic-black);
 }
 
@@ -679,12 +708,14 @@ html {
 
 .search-fields input:hover {
   background-color: var(--grey-hover);
+  cursor: pointer;
 }
 
 .search-fields input:focus {
-  background: var(--basic-white);
-  border: 2px solid var(--border-color);
-  box-sizing: border-box;
+  background-color: var(--basic-white);
+  outline: 0;
+  cursor: pointer; 
+  outline: 2px solid var(--border-color);
 }
 
 .btn-minus-children {
@@ -731,12 +762,14 @@ html {
 .button-calendar:hover path,
 .button-calendar:focus path {
   fill: var(--basic-black);
+  cursor: pointer;
 }
 
 .button-minus:active rect,
 .button-plus:active path,
 .button-calendar:active path {
   fill: var(--bright);
+  cursor: pointer;
 } 
 
 .submit-button {
@@ -760,14 +793,21 @@ html {
   cursor: pointer;
 }
 
-.submit-button:hover,
+.submit-button:hover {
+  background-color: var(--bright-hover);
+  cursor: pointer;
+}
+
 .submit-button:focus {
   background-color: var(--bright-hover);
+  cursor: pointer;
 }
 
 .submit-button:active {
   color: var(--white-active);
   background-color: var(--bright-active);
+  cursor: pointer;
+  border: none;
 }
 
 .map {
@@ -1027,10 +1067,19 @@ html {
 
 .price-input::-moz-placeholder {
   color: var(--basic-white);
+  opacity: 1;
 }
 
 .price-input::-webkit-input-placeholder {
   color: var(--basic-white);
+}
+
+.price-input::placeholder {
+  color: var(--basic-white);
+}
+
+.price-input:focus {
+  outline: 2px solid var(--bright);
 }
 
 .rate-price-slider {
@@ -1071,6 +1120,13 @@ html {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.rate-price-range-control-toggle:focus {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  outline: 2px solid var(--bright);
 }
 
 .show-button {
@@ -1135,6 +1191,9 @@ html {
   opacity: 0.3;
 }
 
+.filter-checkbox[type="checkbox"]:focus + label::before {
+  outline: var(--bright) auto 5px;
+}
 
 /*Search-results*/
 
@@ -1224,8 +1283,12 @@ html {
   border-bottom: 1px dashed var(--bright);
 }
 
-.sorting-item a:hover,
 .sorting-item a:focus {
+  color: var(--bright);
+  outline: 2px solid var(--bright);
+}
+
+.sorting-item a:hover{
   color: var(--bright);
 }
 
@@ -1322,6 +1385,19 @@ html {
   line-height: 26px;
 }
 
+.hotel-title {
+  color: var(--basic-black);
+}
+
+.hotel-title:focus,
+.hotel-title:hover {
+  color: var(--bright);
+}
+
+.hotel-title:active {
+  color: var(--black-with-opacity);
+}
+
 .hotel-item span {
   font-weight: normal;
   font-size: 14px;
@@ -1382,14 +1458,22 @@ html {
   cursor: pointer;
 }
 
-.more-button:hover,
 .more-button:focus {
+  background-color: var(--bright-hover);
+  outline: 2px solid var(--basic-black);
+}
+
+.more-button:hover {
   background-color: var(--bright-hover);
 }
 
-.book-button:hover,
+.book-button:hover {
+  background-color: var(--button-brown-hover);
+}
+
 .book-button:focus {
   background-color: var(--button-brown-hover);
+  outline: 2px solid var(--basic-black);
 }
 
 .more-button:active{
