@@ -601,6 +601,7 @@ html {
 .search-form-container {
   overflow: hidden;
   position: absolute;
+  z-index: 30;
   width: 1200px;
   display: flex;
   justify-content: center;
@@ -844,9 +845,24 @@ html {
   height: 594px;
 }
 
+.map iframe {
+  position: relative;
+  z-index: 20;
+  border: none;
+}
+
+.map img {
+  position: relative;
+  top: -602px;
+  left: 0;
+  z-index: 10;
+}
+
 /* Footer */
 
 .main-footer {
+  position: relative;
+  z-index: 30;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
