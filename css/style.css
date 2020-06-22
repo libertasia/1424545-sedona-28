@@ -1266,8 +1266,9 @@ html {
 }
 
 .filter-checkbox[type="checkbox"]:focus + label::before {
-  outline: var(--bright) auto 5px;
+  outline: 2px solid var(--bright);
 }
+
 
 /*Search-results*/
 
