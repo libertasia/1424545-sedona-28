@@ -548,7 +548,7 @@ html {
   min-height: 86px;
   padding: 30px 124px 30px 125px;
 
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 21px;
@@ -837,7 +837,7 @@ html {
   min-height: 58px;
   padding: 16px;
   margin: 0;
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 21px;
