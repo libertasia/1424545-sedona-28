@@ -206,6 +206,7 @@ html {
 
 .background-photo {
   height: 509px;
+  background-color: var(--bright);
   background-image: 
     url("../img/zigzag.svg"),
     url("../img/background_photo_index.jpg");
@@ -596,6 +597,28 @@ html {
   }
 }
 
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 /*Hotel search form*/
 
 .search-form-container {
@@ -614,6 +637,10 @@ html {
 .modal-show {
   display: flex;
   animation: bounce 0.6s
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .search-form {
@@ -1108,6 +1135,7 @@ html {
   font-size: 14px;
   line-height: 21px;
   padding: 0;
+  cursor: pointer;
 }
 
 .price-input::-moz-placeholder {
@@ -1214,6 +1242,7 @@ html {
 .filter-checkbox+label {
   position: relative;
   padding-left: 40px;
+  cursor: pointer;
 }
 
 .filter-checkbox+label::before {
