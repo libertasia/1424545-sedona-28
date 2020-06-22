@@ -8,6 +8,10 @@ var checkOutDate = searchForm.querySelector("#check-out-date");
 var isStorageSupported = true;
 var storage = "";
 
+searchForm.classList.remove("modal-show");
+searchForm.classList.add("modal-close");
+searchForm.classList.remove("modal-error");
+
 try {
   adultCountStored = localStorage.getItem("adultCount");
   childrenCountStored = localStorage.getItem("childrenCount");
